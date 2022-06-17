@@ -92,3 +92,64 @@ console.log(['Item1', 'Item2', 'Item3', 'Item4'].fill('Banana', 2))
 
 console.log(['Item1', 'Item2', 'Item3', 'Item4'].fill('Banana', 1, 3))
 // ['Item1', 'Banana', 'Banana', 'Item4']
+
+
+/* --------------- Métodos de Acesso --------------
+  Os métodos abaixo não modicam a array original, apenas
+  retornam uma array modicada. */
+
+/* 1. [].concat() 
+   irá concatenar a array com o valor passado. */
+
+   const transporte1 = ['Barco', 'Aviao'];
+   const transporte2 = ['Carro', 'Moto'];
+   
+   const transportes = transporte1.concat(transporte2);
+   // ['Barco', 'Aviao', 'Carro', 'Moto'];
+   
+   const maisTransportes = [].concat(transporte1, transporte2,
+      'Van');
+   // ['Barco', 'Aviao', 'Carro', 'Moto', 'Van'];
+   
+   /* 2. [].includes(), [].indexOf() e [].lastIndexOf()
+   
+   [].includes(valor) verica se a array possui o valor e retorna true ou false. 
+   [].indexOf(valor) verica se a array possui o valor e retorna o index do primeiro valor na array. 
+   [].lastIndexOf(valor) retorna o index do último. */
+   
+   const linguagens = ['html', 'css', 'js', 'php', 'python', 'js'];
+   
+   linguagens.includes('css'); // true
+   linguagens.includes('ruby'); // false
+   
+   linguagens.indexOf('python'); // 4
+   linguagens.indexOf('js'); // 2
+   
+   linguagens.lastIndexOf('js'); // 5
+   
+   /* 3. [].join(separador) 
+     junta todos os valores da array e retorna uma string com eles. 
+     Se você passar um valor como parâmetro, este será utilizado durante a junção de cada item da array. */
+   
+   const linguagens2 = ['html', 'css', 'js', 'php', 'python'];
+   
+   linguagens2.join(); // 'html,css,js,php,python'
+   linguagens2.join(' '); // 'html css js php python'
+   linguagens2.join('-_-'); // 'html-_-css-_-js-_-php-_-python'
+   
+   let htmlString = '<h2>Título Principal</h2>'
+   
+   htmlString = htmlString.split('h2');
+   // ['<', '>Título Principal</', '>']
+   htmlString = htmlString.join('h1');
+   // <h1>Título Principal</h1>
+   
+   /* [].slice(inicio, final) 
+   retorna os itens da array começando pelo início e indo até o valor de final. */
+   
+   const linguagens3 = ['html', 'css', 'js', 'php', 'python'];
+   
+   linguagens3.slice(3); // ['php', 'python']
+   linguagens3.slice(1, 4); // ['css', 'js', 'php']
+   const cloneLinguagens = linguagens3.slice();
+   
